@@ -21,7 +21,8 @@ blockbuster/
 ├── index.html
 ├── css/style.css
 ├── js/main.js
-├── img/tv.png              # TV da hero (tela translúcida)
+├── img/                    # tv.png, target.svg, vhs-stack.webp, connector.svg
+├── favicon.svg / .ico / .png  # letra B (Block Display, #E9A945)
 ├── fonts/                  # woff2 (Block Display, VHS Menu, Inter)
 └── README.md
 ```
@@ -33,7 +34,8 @@ blockbuster/
 - **Hero:** fita VHS e capa flutuando em ritmos diferentes, com uma TV na frente. Dentro da tela, um vídeo do YouTube mudo e em loop, preenchendo a tela (cover). Um poster estático (letra B) aparece até o YouTube confirmar que está tocando.
 - **Trends Now:** abas, filtro por gênero e carrossel.
 - **Gêneros:** o botão ⊕ de cada linha abre um carrossel de títulos.
-- **System Map:** slider de capas com autoplay.
+- **System Map:** slider 16:9, uma imagem por vez, com autoplay, setas e arraste. Para usar fotos reais, troque o `<svg>` dentro de cada `<figure class="slide">` por `<img src="..." alt="...">` (ele já usa `object-fit: cover`).
+- **How it works:** mira com fitas VHS e passos PICK / PLAY / REWIND ligados por conectores.
 - **Movies:** filtro por gênero, ordenação (Latest / Year / A-Z), nota mínima e contador.
 - **Player:** play/pause, barra clicável (também por teclado), tela cheia, SP/EP/SLP e qualidade.
 - **Recommended:** botão "Load more".

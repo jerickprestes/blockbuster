@@ -26,7 +26,7 @@ $$("#menu a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("o
 /* carousels */
 function setupCarousel(c){
   const track=()=>$(".track:not([hidden])",c);
-  const step=()=>{const t=track(),k=$(".card",t);return k?k.getBoundingClientRect().width+16:300};
+  const step=()=>{const t=track(),k=t.firstElementChild;return k?k.getBoundingClientRect().width+(parseFloat(getComputedStyle(t).columnGap)||0):300};
   const go=d=>{const t=track(),max=t.scrollWidth-t.clientWidth-4;
     if(d>0&&t.scrollLeft>=max)t.scrollTo({left:0});else if(d<0&&t.scrollLeft<=4)t.scrollTo({left:max});else t.scrollBy({left:d*step()})};
   $("[data-prev]",c).addEventListener("click",()=>go(-1));
@@ -50,7 +50,7 @@ function dragScroll(el,snap){
     if(moved)el.scrollLeft=sl-dx});
   const end=e=>{if(!down)return;down=false;if(!moved)return;
     const dx=e.clientX-sx;el.classList.remove("dragging");
-    if(snap){const k=$(".card",el),st=k?k.getBoundingClientRect().width+16:300;
+    if(snap){const k=el.firstElementChild,st=k?k.getBoundingClientRect().width+(parseFloat(getComputedStyle(el).columnGap)||0):300;
       let n=(sl-dx)/st;n=Math.abs(dx)>40?(dx<0?Math.ceil(n-.15):Math.floor(n+.15)):Math.round(n);
       el.scrollTo({left:Math.max(0,n*st),behavior:"smooth"})}
     el.addEventListener("click",ev=>ev.stopPropagation(),{capture:true,once:true})};
