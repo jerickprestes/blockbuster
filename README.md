@@ -21,7 +21,7 @@ blockbuster/
 ├── index.html
 ├── css/style.css
 ├── js/main.js
-├── img/                    # tv.png, target.svg, vhs-stack.webp, connector.svg
+├── img/                    # tv.png, target.svg, vhs-stack.webp, connector.svg, og-image.png
 ├── favicon.svg / .ico / .png  # letra B (Block Display, #E9A945)
 ├── fonts/                  # woff2 (Block Display, VHS Menu, Inter)
 └── README.md
@@ -43,6 +43,8 @@ blockbuster/
 - Responsivo, mobile-first, HTML semântico e navegação por teclado.
 
 ## Personalização
+
+**Imagem de compartilhamento (Open Graph)** — `img/og-image.png` (1200x630) aparece na prévia do link no WhatsApp, Facebook, LinkedIn etc. As tags `og:*` e `twitter:*` ficam no `<head>` do `index.html`; o `og:image` precisa de URL absoluta, então troque `https://jerickprestes.github.io/blockbuster/` pelo endereço final do site. Se trocar a imagem depois, o WhatsApp pode manter a antiga em cache (use `?v=2` no link ou o depurador de compartilhamento do Facebook).
 
 **Vídeo da TV** — troque o ID `gul5c2CYGQ4` no `data-src` do `<iframe class="tv__yt">` (aparece também em `playlist=`, necessário para o loop).
 
